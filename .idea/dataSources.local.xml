@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - s6info16@localhost" uuid="94a95f1a-b20e-4a66-850f-127b1a1209ea">
+      <secret-storage>master_key</secret-storage>
+      <user-name>s6info16</user-name>
+      <schema-pattern>s6info16.pg_catalog s6info16.public</schema-pattern>
+      <default-schemas>s6info16.pg_catalog s6info16.public</default-schemas>
+    </data-source>
+  </component>
+</project>
