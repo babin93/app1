@@ -19,7 +19,7 @@ public class LocalActionHandler  implements ActionHandler <LocalAction, LocalRes
 	public LocalResult execute(LocalAction action, ExecutionContext context)
 			throws ActionException {
 		LocalResult  localResult = new LocalResult();
-		localResult.setPlageHoraires(horaireManager.getPlageHorraires(
+		localResult.setPlageHoraires(horaireManager.getPlageHoraires(
 						action.getCategorie_local_id(),
 						action.getPeriode_debut(),
 						action.getPeriode_fin(),
