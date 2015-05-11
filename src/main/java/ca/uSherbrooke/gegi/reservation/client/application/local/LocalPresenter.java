@@ -1,5 +1,6 @@
 package ca.uSherbrooke.gegi.reservation.client.application.local;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Logger;
 
@@ -89,15 +90,20 @@ Presenter<LocalPresenter.MyView, LocalPresenter.MyProxy> implements LocalUiHandl
 
 
 	@Override
-	public void sendLocal(String local) {
+	public void sendSearch(int categorie_local_id, String periodeDebut, String periodeFin, Date date) {
 		LocalAction localAction = new LocalAction();
-		localAction.setLocal(local);
+		localAction.setCategorie_local_id(categorie_local_id);
+		localAction.setDate(date);
+		localAction.setPeriode_debut(periodeDebut);
+		localAction.setPeriode_fin(periodeFin);
+
 		dispatcher.execute(localAction, new AsyncCallback<LocalResult>() {
 			@Override
 			public void onSuccess(LocalResult result) {
 				Logger logger = Logger.getLogger("Log variable");
-				logger.log(java.util.logging.Level.SEVERE, "Local type " + result.getLocalType());
-				InfoEvent.fire(me, result.getLocalType());
+				logger.log(java.util.logging.Level.SEVERE, "Local type " + result.getPlageHoraires());
+				//TODO : Add a call to show presenter of reservations
+				//InfoEvent.fire(me, result.getPlageHoraires());
 			}
 			
 			@Override

@@ -2,7 +2,9 @@ package ca.uSherbrooke.gegi.reservation.server.logic;
 
 import ca.uSherbrooke.gegi.reservation.shared.dispatch.LocalInit.CategorieLocal;
 import ca.uSherbrooke.gegi.reservation.shared.dispatch.LocalInit.Periode;
+import ca.uSherbrooke.gegi.reservation.shared.dispatch.PlageHoraire;
 
+import java.util.Date;
 import java.util.Vector;
 
 /**
@@ -31,4 +33,16 @@ public class HoraireManager {
 
         return periodes;
     }
+
+    public Vector<PlageHoraire> getPlageHorraires(int categorie_local_id, String periode_debut, String periode_fin, Date date){
+
+        Vector<PlageHoraire> plageHoraires = new Vector<>();
+        plageHoraires.add(new PlageHoraire("C1-2002","10:00","Bla bla bla"));
+        plageHoraires.add(new PlageHoraire("C1-2002","10:00","Bla bla"));
+        plageHoraires.add(new PlageHoraire("C1-2003","12:00","Bla"));
+
+        return plageHoraires;
+    }
+
+
 }

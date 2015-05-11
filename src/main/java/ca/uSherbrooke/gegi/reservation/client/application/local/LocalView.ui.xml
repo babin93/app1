@@ -1,7 +1,7 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
              xmlns:g="urn:import:com.google.gwt.user.client.ui"
-             xmlns:dp="urn:import:com.github.gwtbootstrap.datepicker.client.ui">
+             xmlns:dp="urn:import:com.google.gwt.user.datepicker.client">
     <ui:style src='LocalStyle.css'/>
     <g:HTMLPanel>
         <header>
@@ -12,7 +12,7 @@
 
         <div class="container box">
             <p>
-                <strong>Catégorie de local:</strong>
+                <strong>Catégorie de categorie_local_id:</strong>
             </p>
             <g:ListBox ui:field="listBox"/>
             <p>
@@ -25,10 +25,14 @@
             </p>
             <g:ListBox ui:field="listBoxPeriodeFin"/>
 
-            <!--<p>-->
-                <!--<strong>Jour:</strong>-->
-            <!--</p>-->
-            <!--<dp:DateBox ui:field="dateBox"/>-->
+            <p>
+                <strong>Date:</strong>
+            </p>
+            <dp:DateBox ui:field="dateBox"/>
+
+            <g:Button ui:field="searchButton">
+                Rechercher
+            </g:Button>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

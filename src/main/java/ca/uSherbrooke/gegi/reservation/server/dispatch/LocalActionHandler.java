@@ -1,7 +1,7 @@
 package ca.uSherbrooke.gegi.reservation.server.dispatch;
 
 
-import ca.uSherbrooke.gegi.reservation.server.logic.LocalType;
+import ca.uSherbrooke.gegi.reservation.server.logic.HoraireManager;
 import ca.uSherbrooke.gegi.reservation.shared.dispatch.LocalAction;
 import ca.uSherbrooke.gegi.reservation.shared.dispatch.LocalResult;
 
@@ -12,13 +12,18 @@ import com.gwtplatform.dispatch.shared.ActionException;
 
 public class LocalActionHandler  implements ActionHandler <LocalAction, LocalResult>{
 
-    @Inject LocalType localType;
+    @Inject
+	HoraireManager horaireManager;
 
 	@Override
 	public LocalResult execute(LocalAction action, ExecutionContext context)
 			throws ActionException {
 		LocalResult  localResult = new LocalResult();
-		localResult.setLocalType(localType.getLocalType(action.getLocal()));
+		localResult.setPlageHoraires(horaireManager.getPlageHorraires(
+						action.getCategorie_local_id(),
+						action.getPeriode_debut(),
+						action.getPeriode_fin(),
+						action.getDate()));
 		return localResult;
 	}
 
